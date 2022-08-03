@@ -1,0 +1,37 @@
+{
+  "name": "FlowStream",
+  "version": "9.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/totaljs/flowstream"
+  },
+  "dependencies": {
+    "amqp-connection-manager": "^4.1.3",
+    "awesome-qr": "^2.1.5-rc.0",
+    "better-sqlite3": "^7.5.1",
+    "cheerio": "^1.0.0-rc.10",
+    "google-it": "^1.6.2",
+    "i2c-bus": "^5.2.2",
+    "mongodb": "^4.4.0",
+    "mqtt": "^4.3.7",
+    "mysql2": "^2.3.3",
+    "node-schedule": "^2.1.0",
+    "pg": "^8.7.3",
+    "querybuilderpg": "^1.0.6",
+    "rpi-gpio": "^2.1.7",
+    "serialport": "^10.4.0",
+    "total4": "^0.0.55",
+    "write-excel-file": "^1.3.16"
+  },
+  "scripts": {
+    "start": "node index.js 8000"
+  },
+  "keywords": [
+    "flow",
+    "flowstream",
+    "iot"
+  ],
+  "author": "Peter Širka",
+  "license": "MIT"
+}

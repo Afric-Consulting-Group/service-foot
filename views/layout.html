@@ -1,0 +1,238 @@
+@{title(CONF.name)}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<meta name="robots" content="all,follow" />
+	@{if CONF.openplatform}
+	<script src="@{if CONF.cdn}@{'%cdn'}@{else}https://cdn.componentator.com@{fi}/openplatform.min@4.js"></script>
+	@{fi}
+	@{import('meta', 'head', 'default.css','favicon.png','spa.min@19.js', 'spa.min@19.css')}
+</head>
+<body data---="exec"@{if query.darkmode === '1'} class="ui-dark"@{fi}>
+    <style>
+       
+        body{
+            color: #296b13;
+        }
+        .active{
+            background: #296b13!important;
+            color: white!important;
+            border-radius: 5px;
+        }
+        .contentbg{
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid #E0E0E0;
+            width: 100%;
+            padding:10px;
+            cursor: pointer;
+
+        }
+        .cbg{
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid #E0E0E0;
+            width: 450px;
+            padding:10px;
+            cursor: pointer;
+
+        }
+      
+        .beforecontentbg{
+            background-color: #E0E0E0!important;
+            border: 1px solid #4285F4!important;
+        }
+
+        .custom_btn{
+            background-color: #296b13!important;
+            color: #fff!important;
+        }
+     
+    </style>
+	<div data---="LAZY menu__null__style:2"></div>
+	<div data---="LAZY approve__null__cancel:@(Cancel)"></div>
+	<div data---="LAZY message__null__style:2"></div>
+    <div data---="confirm__null__cancel:@(Annuler)"></div>
+	<div data---="LAZY notifybar"></div>
+	<div data---="LAZY fileuploader"></div>
+	<div data---="LAZY clipboard"></div>
+	<div data---="LAZY faicons"></div>
+    <div data---="datepicker__null__today:Aujourdhui;firstday:0;days:DIM,LUN,MAR,MER,JEU,VEN,SAM;months:Janvier,Fevrier,Mars,Avril,Mai,Juin,Juillet,Aout,Septembre,Octobre,Novembre,Decmbre;"></div>
+    <div data---="snackbar"></div>
+	<div data---="LAZY directory__null__placeholder:@(Rechercher)"></div>
+	<div data---="LAZY colorpicker"></div>
+	<div data---="paste"></div>
+	<div data---="shortcuts"></div>
+                <div data---="layout2__null__parent:window" class="invisible">
+                    <div data-type="top" data-size="60">
+                        <div class="toolbar toolbar-bg">
+                            <div class="pull-right">
+                                <button style="border: 1px solid #296b13!important;color: #296b13!important;" class="exec" title="Mise a jours" id="contenus"   data-exec="contenus"><i class="fa fa-spinner"></i></button>
+                                <button style="border: 1px solid #296b13!important;color: #296b13!important;" class="exec" title="Archives" id="archieves"   data-exec="archieves"><i class="fa fa-database"></i></button>
+                                <button style="border: 1px solid #296b13!important;color: #296b13!important;" class="exec" title="Planning" id="planning"   data-exec="planning"><i class="fa fa-calendar"></i></button>
+                                <button style="border: 1px solid #296b13!important;color: #296b13!important;" class="exec" title="Configurations" id="configurations"  data-exec="configurations"><i class="fa fa-cog"></i></button>
+                                <button style="border: 1px solid #296b13!important;color: red!important; background-color:#fff;" class="exec" title="Deconnexion" id="deconnexion"  data-exec="deconnexion"><i class="fa fa-power-off"></i></button>
+                            </div>
+                            <div>
+                                <button style="border: 1px solid #296b13!important;color: #296b13!important;" class="exec" id="power"  data-exec="power"><i class="fa red fa-power-off"></i>STOP/START</button>
+                                <div  class="col-md-4" >
+                                    <h1 style="color: #296b13;" data-bind="common.title__html:value.toUpperCase()" class="center mt5"></h1>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                            @{body}
+                    </div>
+                </div>
+	<script>
+        NAV.clientside('.R');
+        DEF.fallback = "./cdn/j-{0}.html";
+		var common = {};
+        common.active = 'contenus';
+        common.title = 'Mise a jours';
+        common.titl3 = 'Contenus';
+        common.titl2 = 'Contenus';
+        var form = {all : false,telecel : false,moovmali : false,moovburkina : false,moovbenin : false};
+		common.secret = 'flowstream';
+        common.search = '';
+        common.menus = [];
+        common.operators = [
+            { id : 'telecel', name : 'Telecel Faso'},
+            { id : 'moovburkina', name : 'Moov Africa Burkina'},
+            { id : 'moovbenin', name : 'Moov Africa Benin'},
+            { id : 'moovmali', name : 'Moov Africa Mali'}
+            ];
+        common.contenus = [];
+        if (CHANGED('form.*')) {
+            var form = GET('form');
+           console.log(form);
+        };
+        AJAX('GET /menus',function(res){
+            var groups = {};
+                res.forEach(function(menu){
+                    if (menu.parent == "none"){
+                        return;
+                    }
+
+                    var parent = menu.parent;
+                    var group_name = menu.parent;
+
+                    if(groups[group_name]){
+                        groups[group_name].items.push(menu);
+                    }
+                    else{
+                        groups[group_name] = {
+                            id : group_name,
+                            name : parent,
+                            items : [menu]
+                        };
+                    };
+                    
+                });
+                var arr= [];
+                    for (var key in groups) {
+						arr.push({ name: key, items: groups[key].items });
+						groups[key].items.quicksort('name');
+					}
+            SET('common.menus',arr);
+            AJAX('GET /contenus/'+arr[0].items[0].name,function(response){
+                response.quicksort('dtcreated_desc');
+                
+                SET('common.contenus',response);
+            });
+        });
+        function stop(){
+            $('#stop').prop('disabled',true);
+            $('#resume').prop('disabled',false);
+            console.log('stop');
+        };
+        function set_active(next,callback){
+            localStorage.setItem('active',next);
+            callback();
+        };
+
+        function toggle_active(){
+            var current = localStorage.getItem('active');
+            $('#'+current).css('background-color','#296b13');
+            $('#'+current).css('color','#fff');
+        };
+        toggle_active();
+        function selectContent(el){
+            var content = common.contenus.findItem('id',$(el).prop('id'));
+            $('.contentbg').rclass('beforecontentbg');
+            $(el).tclass('beforecontentbg');
+            SET('contenus.details',content);
+            SET('form.message',content['contenu']);
+    
+        };
+        function resume(){
+            $('#stop').prop('disabled',false);
+            $('#resume').prop('disabled',true);
+            console.log('resume');
+        };
+        function clickme(el,path){
+
+            $('.active').removeClass('active');
+            $(el).addClass('active');
+        };
+        function mobilemenu(){
+            if(isMOBILE){
+                $('.menu').toggleClass('hidden');
+            }
+        };
+        if(isMOBILE){
+            $('.menuButton').removeClass('hidden');
+        }else{
+            $('.menuButton').css('display','none');
+        };
+        ROUTE('/contenus/{parent}/{name}/{apiconfigs_name}',function(){
+            
+            var self = this;
+            AJAX('GET /contenus/'+self.params[2],function(res){
+                
+                SET('common.contenus',res);
+                SET('common.title2',decodeURI(self.params[0])+' ');
+                SET('common.title3','/ '+decodeURI(self.params[1]));
+            });
+        });
+       function archieves(){
+           set_active('archieves',function(){
+
+               window.location.href = '/archieves';
+           });
+       };
+       function contenus(){
+           set_active('contenus',function(){
+
+               window.location.href = '/contenus';
+           });
+
+       };
+       function planning(){
+           set_active('planning',function(){
+
+               window.location.href = '/planning ';
+           });
+
+        }
+       function configurations(){
+           set_active('configurations',function(){
+
+               window.location.href = '/configurations ';
+           });
+        }
+        function deconnexion(){
+            AJAX('GET /fapi/logout/', ERROR(function(response) {
+                location.href = '/' ;
+            }, function(response) {
+                SET('%error', response[0].error);
+            }));
+        }
+      
+	</script>
+</body>
+</html>

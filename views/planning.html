@@ -1,0 +1,211 @@
+<div style="background-color: #f0f0f0;" data-type="left" data-scrollbar="visible:true" data-size="20%,20%,20%,0">
+    <div class="m center padding">
+        <h2>Menus</h2>
+        <div data---="textbox__common.search__type:search;placeholder:Rechercher;"></div>
+    </div>
+    <div data-bind="common.menus__template">
+        <script type="text/html" >
+           
+
+            
+            {{ foreach m in value }}
+            <div class="listing">
+            <div class="caption m" style="padding-left: 16px; font-weight:bold;" >
+                <label data-id="{{m.name}}" >{{ m.name }} </label>
+            </div>
+            <div data---="search__common.search__selector:figure">
+
+                {{ foreach item in m.items}}
+                <figure class="m" data-search="{{m.name}} {{item.menu_name}}">
+                    <section class="R" href="/contenus/planning/{{m.name}}/{{ item.menu_name }}/{{item.name}}">
+                        <div>{{ item.menu_name }}</div>
+                        <div class="help nmt"></div>
+                    </section>
+                </figure>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        </script>
+    </div>
+</div>
+<div style="background-color: #f0f0f0;" data-scrollbar="visible:true" data-type="right" data-size="30%,30%,30%,0" >
+    <div class="m center">
+        <h2>Operations</h2>
+    </div>
+    <div class="row padding">
+    
+        <div data---="properties2__planning.editor__style:1">
+            <script type="text/plain">
+                [
+                    { group: 'Editeur de Planning', label: 'ID', name: 'id', type: 'text'},
+                    { group: 'Editeur de Planning', label: 'Heure', name: 'time', type: 'string', placeholder: 'Heure de d  eclenchement' }
+                ]
+            </script>
+        </div>
+        <div style="padding:10px" data---="submit__planning.editor__url:POST /configurations/sauvegarde/;exec:operation_sauver">
+        
+            <div data---="button__null__exec:clickme;icon:fa fa-send" class="hidden custom_btn">Sauvegarder</div>
+
+        </div>
+  
+      
+    </div>
+  
+
+ 
+</div>
+<div data-type="main" data-scrollbar="visible:true">
+    <div style="background-color: #fafa; color:white;"  data---="button__null__exec:mobilemenu;icon:fa fa-bars;" class="menuButton hidden">Contenu</div>
+        <div class="menu hidden" data-bind="common.menus__template">
+            <script type="text/html" >
+                {{ foreach m in value }}
+                <div class="caption m" style="padding-left: 6px; font-weight:bold;" >
+                    <label data-id="{{m.name}}" >{{ m.name }} </label>
+                </div>
+                <div class="listing center">
+                    {{ foreach item in m.items}}
+                        <figure>
+                            <section class="R" href="/contenus/planning/{{m.name}}/{{ item.menu_name }}/{{item.name}}">
+                                <div>{{ item.menu_name }}</div>
+                                <div class="help nmt"></div>
+                            </section>
+                        </figure>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </script>
+        </div>
+<div class="m center padding">
+    <h2><b>Details : </b> <b data-bind="common.title2__html"></b><b data-bind="common.title3__html"></b> </h2>
+</div>
+<div class="col-md-12">
+
+    <div data---="detail__common.planning__style:2;small:true;defaultgroup:Source;">
+        <script type="text/plain">
+            [
+                { name: 'ID', path: 'id', type: 'string'},
+                { name: 'time', path: 'time', type: 'string'},
+            ]
+        </script>
+    </div>
+
+    <div data---="detail__common.planning__style:2;small:true;defaultgroup:Parametres;">
+        <script type="text/plain">
+            [
+                { name: '', path: 'value', type: 'template', template : '<span style="cursor:pointer;" class="exec red" data-id="{{item.name}}"  data-exec="planning_operations">Modifier</span>', }
+            ]
+        </script>
+    </div>
+  
+</div>
+<script>
+    var archieveform = {};
+	archieveform.date = new Date();
+
+  SET('planning.editor',{id : 'identidiant unique', time : '00:00'});
+  function set_local(key,value){
+    localStorage.setItem(key,value);  
+  };
+
+  function get_local(key){
+    var value = localStorage.getItem(key);
+    if(!value){
+        value = '';
+    };
+    return value;
+  };
+
+    AJAX('GET /menus',function(res){
+        SET('common.title','Planning');
+        var groups = {};
+            res.forEach(function(menu){
+                if (menu.parent == "none"){
+                    return;
+                }
+
+                var parent = menu.parent;
+                var group_name = menu.parent;
+
+                if(groups[group_name]){
+                    groups[group_name].items.push(menu);
+                }
+                else{
+                    groups[group_name] = {
+                        id : group_name,
+                        name : parent,
+                        items : [menu]
+                    };
+                };
+            });
+            var arr= [];
+                for (var key in groups) {
+                    arr.push({ name: key, items: groups[key].items });
+                    groups[key].items.quicksort('name');
+                };
+        SET('common.menus',arr);
+        set_local('name',arr[0].items[0].menu_name);
+        set_local('parent',arr[0].parent);
+        AJAX('GET /contenus/planning/'+arr[0].items[0].name,function(response){
+            console.log(response);
+            SET('common.planning',response);
+        });
+    });
+    ROUTE('/contenus/planning/{parent}/{name}/{apiconfigs_name}',function(){
+        var self = this;
+        set_local('parent',self.params[0]);
+        set_local('name',self.params[1]);
+        set_local('config_name',self.params[2]);
+        AJAX('GET /contenus/planning/'+self.params[2],function(res){
+            
+            SET('common.planning',res);
+            SET('common.title2',decodeURI(self.params[0])+' ');
+            SET('common.title3','/ '+decodeURI(self.params[1]));
+        });
+    });
+   function planning_operations (el){
+        var name = el.attrd2('id');
+        console.log(name);
+        AJAX('GET /contenus/planning/'+name,function(res){
+            console.log(res);
+            SET('planning.editor',res);
+        });
+    };
+    function operation_remove(el,path){
+        var id = el.attrd2('id');
+        SETTER(true, 'confirm', 'show', 'Voulez vous vraiment supprimer ce contenu? Cette operation est irreversible!', ['"check-circle" SUPPRIMER', 'ANNULER'], function() {
+            AJAX('GET /planning/operations?action=remove&id='+id,function(value,err,response){
+                if(!value.success){
+                    SETTER(true, 'message/warning','Erreur');
+                    return;
+                };
+                SETTER(true,'snackbar/success', 'Suppression terminee avec succes!');
+                NAV.refresh();
+            });
+        });
+    };
+    function operation_sauver(value,err,response){
+        if(!value.success){
+            SETTER(true, 'message/warning','Erreur');
+            return;
+        };
+        SETTER(true,'snackbar/success', 'Modification terminee avec succes!');
+        REDIRECT(`/contenus/planning/${get_local('parent')}/${get_local('name')}/${get_local('config_name')}`);
+    };
+    function form_exec(res,el){
+        console.log(res);
+        console.log(GET('form.message'));
+    };
+    function selectArchieves(el){
+        var content = common.archieves.findItem('id',$(el).prop('id'));
+        $('.contentbg').rclass('beforecontentbg');
+        $(el).tclass('beforecontentbg');
+        console.log(content);
+        SET('archieves.details',content);
+        //SET('archieves.details.source',content['payload']);
+
+    };
+
+
+
+</script>

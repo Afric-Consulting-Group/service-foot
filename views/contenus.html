@@ -1,0 +1,208 @@
+<div style="background-color: #f0f0f0;" data-type="left" data-scrollbar="visible:true" data-size="20%,20%,20%,0">
+    <div class="m center padding">
+        <h2>Menu</h2>
+        <div data---="textbox__common.search__type:search;placeholder:Rechercher;"></div>
+
+    </div>
+    <div data-bind="common.menus__template">
+        <script type="text/html" >
+           
+
+            
+            {{ foreach m in value }}
+            <div class="listing">
+            <div class="caption m" style="padding-left: 16px; font-weight:bold;" >
+                <label data-id="{{m.name}}" >{{ m.name }} </label>
+            </div>
+                <div data---="search__common.search__selector:figure">
+                    {{ foreach item in m.items}}
+                        <figure class="m" data-search="{{m.name}} {{item.menu_name}}">
+                            <section class="R" href="/contenus/{{m.name}}/{{ item.menu_name }}/{{item.name}}">
+                                <div>{{ item.menu_name }}</div>
+                            </section>
+                        </figure>
+                        {{ end }}
+                    </div>
+                {{ end }}
+                </div>
+        </script>
+    </div>
+</div>
+<div style="background-color: #f0f0f0; padding:10px;" data-scrollbar="visible:true" data-type="right" data-size="30%,30%,30%,0" >
+    <div class="m center">
+        <h2>Operations</h2>
+    </div>
+    <div  class="m">
+        <h2>Envoie manuel</h2>
+        <div data---="input___form.message__type:multiline;required:true;placeholder:Saisir un message" class="m">Editeur de contenu</div>
+        
+       <div data---="dropdowncheckbox__form.destinations__placeholder:Choisir operateur;datasource:common.operators;alltext:Tout les Operateurs;required:true;type:text;visible:3">Operateur</div>
+
+        
+        <div style="padding:10px" data---="submit__form__url:POST /contenu/envoie/;exec:form_exec">
+        
+            <div data---="button__null__exec:clickme;icon:fa fa-send" class="hidden custom_btn">ENVOYER</div>
+        </div>
+    </div>
+    <div class="row padding">
+        
+        <div data---="detail__contenus.details__style:2;small:true;defaultgroup:Contenu;">
+            <script type="text/plain">
+                [
+                    // Will be displayed, look to show condition ("m" means "model")
+                    { name: 'Contenu', path: 'contenu', type: 'string' }
+                ]
+            </script>
+        </div>
+    </div>
+    <div class="row padding">
+        <div data---="detail__contenus.details.payload__style:3;small:true;defaultgroup:Source;">
+            <script type="text/plain">
+                [
+                    { name: 'Categorie', path: 'category', type: 'string'},
+                    { name: 'Langue Origine', path: 'language', type: 'string' },
+                    { name: 'Pays', path: 'country', type: 'string'},
+                    { name: 'Date Publication', path: 'published_at', type: 'date'},
+                    { name: 'Source', path: 'source', type: 'string'},
+                    { name: 'Titre', path: 'title', type: 'string'},
+                    { name: 'Auteur', path: 'author', type: 'string'},
+                    { name: 'Url', path: 'url', type: 'template', template : '<a href="{{value}}" target="_blank">{{value}}</a>',},
+                ]
+            </script>
+        </div>
+
+        <div data---="detail__contenus.details.payload__style:2;small:true;defaultgroup:Details Source;">
+            <script type="text/plain">
+                [
+                    { name: 'Titre', path: 'title', type: 'string'},
+                    { name: 'Description', path: 'description', type: 'string'},
+                    { name: 'Image', path: 'image', type: 'template', template : '<img width="350px" height="180px" src="{{value}}" alt="Image here"/>', }
+                ]
+            </script>
+        </div>
+    </div>
+</div>
+<div data-type="main" data-scrollbar="visible:true">
+    <div style="background-color: #fafa; color:white;"  data---="button__null__exec:mobilemenu;icon:fa fa-bars;" class="menuButton hidden">Contenu</div>
+        <div class="menu hidden" data-bind="common.menus__template">
+            <script type="text/html" >
+                {{ foreach m in value }}
+                <div class="caption m" style="padding-left: 6px; font-weight:bold;" >
+                    <label data-id="{{m.name}}" >{{ m.name }} </label>
+                </div>
+                <div class="listing center">
+                    {{ foreach item in m.items}}
+                        <figure>
+                            <section class="R"  href="/contenus/{{m.name}}/{{ item.menu_name }}/{{item.name}}">
+                                <div>{{ item.menu_name }}</div>
+                                <div class="help nmt"></div>
+                            </section>
+                        </figure>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </script>
+        </div>
+        <div class="m center padding">
+            <h2><b>Details : </b><b data-bind="common.title2__html"></b><b data-bind="common.title3__html"></b> </h2>
+        </div>
+<div class="col-md-2"></div>
+<div class="col-md-7">
+<div class="center" data-bind="common.contenus__template">
+<script type="text/html" >
+    {{ foreach contenu in value }}
+    <div class="row cbg">
+            <div data-exec="selectContent" id="{{ contenu.id }}" class="contentbg exec">
+                {{ contenu.contenu }}
+            </div>
+            <div style="padding-top:10px" class="row">
+                <div class="col-md-2">
+                    <div style="color: red!important;" data-id="{{ contenu.id }}" data---="button__null__exec:operation_remove;icon:fa fa-trash red" id="{{ contenu.id }}" class="hidden"></div>
+                </div>
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <div style="color: green!important;" data-id="{{ contenu.id }}" data---="button__null__exec:operation_validate;icon:fa fa-check green" id="{{ contenu.id }}" class="hidden"></div>
+                </div>
+            </div>
+    </div>
+    {{ end }}
+</script>
+</div>
+</div>
+<div class="col-md-3"></div>
+<script>
+    AJAX('GET /menus',function(res){
+        var groups = {};
+            res.forEach(function(menu){
+                if (menu.parent == "none"){
+                    return;
+                }
+
+                var parent = menu.parent;
+                var group_name = menu.parent;
+
+                if(groups[group_name]){
+                    groups[group_name].items.push(menu);
+                }
+                else{
+                    groups[group_name] = {
+                        id : group_name,
+                        name : parent,
+                        items : [menu]
+                    };
+                };
+                
+            });
+            var arr= [];
+                for (var key in groups) {
+                    arr.push({ name: key, items: groups[key].items });
+                    groups[key].items.quicksort('name');
+                };
+        SET('common.menus',arr);
+        AJAX('GET /contenus/'+arr[0].items[0].name,function(response){
+            response.quicksort('dtcreated_desc');
+            SET('common.contenus',response);
+        });
+    });
+    function operation_remove(el,path){
+        var id = el.attrd2('id');
+        console.log(id);
+        SETTER(true, 'confirm', 'show', 'Voulez vous vraiment supprimer ce contenu? Cette operation est irreversible!', ['"check-circle" SUPPRIMER', 'ANNULER'], function(no) {
+            if(no){
+                return;
+            };
+
+            AJAX('GET /contenus/operations?action=remove&id='+id,function(value,err,response){
+                if(!value.success){
+                    SETTER(true, 'message/warning','Erreur');
+                    return;
+                };
+                SETTER(true,'snackbar/success', 'Suppression terminee avec succes!');
+                NAV.refresh();
+            });
+       });
+    };
+  
+    function operation_validate(el,path){
+        var id = el.attrd2('id');
+        console.log(id);
+
+        SETTER(true, 'confirm', 'show', 'Voulez vous vraiment envoyer a tous les operateurs?', ['"check-circle" ENVOYER #2BA433', 'ANNULER'], function(no) {
+            if(no){
+                return ;
+            };  
+            AJAX('GET /contenus/operations?action=validate&id='+id,function(value,err,response){
+                if(!value.success){
+                    SETTER(true,'message/warning', 'Erreur');
+                    return;
+                };
+                SETTER(true,'snackbar/success', 'Contenus envoyes avec succes !');
+                NAV.refresh();
+            });
+        });
+    };
+    function form_exec(res,el){
+        console.log(res);
+        console.log(GET('form.message'));
+    };
+</script>

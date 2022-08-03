@@ -1,0 +1,89 @@
+{"id":"lqpi017do41d","unique":"295542_0","event_name":"started","date":"2022-01-05","home_name":"Atletico de Kolkata","away_name":"FC Pune City","score":"1 - 0"}
+{"id":"lqpi110do40d","unique":"295542_1487272","event_name":"started","date":"2022-01-05","home_name":"Atletico de Kolkata","away_name":"FC Pune City","score":"1 - 1"}
+{"id":"lszx004so40d","unique":"295644_1487274","event_name":"started","date":"2022-01-07","home_name":"East Bengal Club","away_name":"Mumbai City FC","score":"0 - 0"}
+{"id":"dhcd016mn40d","unique":"296129_1471506","event_name":"started","match_id":296129,"date":"2022-01-09","home_name":"Cameroon","away_name":"Burkina Faso","score":"0 - 0"}
+{"id":"lvle090tl40d","unique":"296159_0","event_name":"started","match_id":296159,"date":"2022-01-09","home_name":"Ethiopia","away_name":"Cape Verde","score":"0 - 1"}
+{"id":"lwf2004ys40d","unique":"296182_1491800","event_name":"started","match_id":296182,"date":"2022-01-10","home_name":"Senegal","away_name":"Zimbabwe","score":"0 - 0"}
+{"id":"lwi3193ul41d","unique":"296195_1491801","event_name":"started","match_id":296195,"date":"2022-01-10","home_name":"Guinea","away_name":"Malawi","score":"0 - 0"}
+{"id":"lwi3194ul40d","unique":"296196_1492789","event_name":"started","match_id":296196,"date":"2022-01-10","home_name":"Morroco","away_name":"Ghana","score":"0 - 0"}
+{"id":"lwi3875ul41d","unique":"296210_1492790","event_name":"started","match_id":296210,"date":"2022-01-10","home_name":"Comoros","away_name":"Gabon","score":"0 - 0"}
+{"id":"lwi31515ul41d","unique":"296215_1454727","event_name":"started","match_id":296215,"date":"2022-01-10","home_name":"Real Oviedo","away_name":"Eibar","score":"1 - 0"}
+{"id":"lxex008wn40d","unique":"296220_0","event_name":"started","match_id":296220,"date":"2022-01-11","home_name":"Jablonec","away_name":"Sparta Praha II","homeid_awayid":"891_4385","score":"1 - 0"}
+{"id":"lxii110ea40d","unique":"296227_1491813","event_name":"started","match_id":296227,"date":"2022-01-11","home_name":"Algeria","away_name":"Sierra Leone","homeid_awayid":"1528_1598","score":"0 - 0"}
+{"id":"lxii447ea41d","unique":"296246_1491807","event_name":"started","match_id":296246,"date":"2022-01-11","home_name":"Nigeria","away_name":"Egypt","homeid_awayid":"1445_215","score":"0 - 0"}
+{"id":"lyn3004pg40d","unique":"296319_1491819","event_name":"started","match_id":296319,"date":"2022-01-12","home_name":"Tunisia","away_name":"Mali","homeid_awayid":"1455_1616","score":"0 - 0"}
+{"id":"lytt002fu40d","unique":"296353_1491820","event_name":"started","match_id":296353,"date":"2022-01-12","home_name":"Mauritania","away_name":"Gambia","homeid_awayid":"1529_1527","score":"0 - 0"}
+{"id":"lyxn001sy41d","unique":"296362_1491814","event_name":"started","match_id":296362,"date":"2022-01-12","home_name":"Equatorial Guinea","away_name":"Ivory Coast","homeid_awayid":"1518_1628","score":"0 - 1"}
+{"id":"lzgg006om40d","unique":"296411_0","event_name":"started","match_id":296411,"date":"2022-01-13","home_name":"Cameroon","away_name":"Ethiopia","homeid_awayid":"2711_1597","score":"0 - 0"}
+{"id":"lzgg339om41d","unique":"296418_1491797","event_name":"started","match_id":296418,"date":"2022-01-13","home_name":"Cape Verde","away_name":"Burkina Faso","homeid_awayid":"1608_1530","score":"0 - 0"}
+{"id":"lzgg704om40d","unique":"296446_1492788","event_name":"started","match_id":296446,"date":"2022-01-14","home_name":"Senegal","away_name":"Guinea","homeid_awayid":"1460_2724","score":"0 - 0"}
+{"id":"lzgg1059om41d","unique":"296487_1491802","event_name":"started","match_id":296487,"date":"2022-01-14","home_name":"Malawi","away_name":"Zimbabwe","homeid_awayid":"1548_2751","score":"0 - 0"}
+{"id":"lzgg1060om40d","unique":"296488_1492791","event_name":"started","match_id":296488,"date":"2022-01-14","home_name":"Morroco","away_name":"Comoros","homeid_awayid":"1435_2753","score":"0 - 0"}
+{"id":"lzgg1841om41d","unique":"296506_1492792","event_name":"started","match_id":296506,"date":"2022-01-14","home_name":"Gabon","away_name":"Ghana","homeid_awayid":"1546_214","score":"0 - 0"}
+{"id":"lzgg2516om40d","unique":"296535_0","event_name":"started","match_id":296535,"date":"2022-01-15","home_name":"Znojmo","away_name":"FC Viktoria Otrokovice","homeid_awayid":"391_4592","score":"0 - 0"}
+{"id":"lzgg2517om41d","unique":"296554_0","event_name":"started","match_id":296554,"date":"2022-01-15","home_name":"Mfk Vyskov","away_name":"Hodonin-Sardice","homeid_awayid":"2695_5667","score":"0 - 0"}
+{"id":"lzgg2518om40d","unique":"296576_0","event_name":"started","match_id":296576,"date":"2022-01-15","home_name":"Górnik Polkowice","away_name":"Miedz Legnica","homeid_awayid":"4519_901","score":"0 - 0"}
+{"id":"lzgg2519om41d","unique":"296577_0","event_name":"started","match_id":296577,"date":"2022-01-15","home_name":"Rudes","away_name":"NK Jarun Zagreb","homeid_awayid":"435_6910","score":"3 - 1"}
+{"id":"lzgg2520om40d","unique":"296582_1495879","event_name":"started","match_id":296582,"date":"2022-01-15","home_name":"Young Boys","away_name":"Grasshopper","homeid_awayid":"151_854","score":"1 - 0"}
+{"id":"lzgg2521om41d","unique":"296589_0","event_name":"started","match_id":296589,"date":"2022-01-15","home_name":"ETO FC Gyor","away_name":"Szolnok","homeid_awayid":"3055_4991","score":"1 - 1"}
+{"id":"lzgg2522om40d","unique":"296590_0","event_name":"started","match_id":296590,"date":"2022-01-15","home_name":"Zemplin Michalovce","away_name":"Tatran Presov","homeid_awayid":"1186_1180","score":"1 - 1"}
+{"id":"lzgg2523om41d","unique":"296591_0","event_name":"started","match_id":296591,"date":"2022-01-15","home_name":"KS Warta Poznan","away_name":"Arka Gdynia","homeid_awayid":"1500_898","score":"0 - 0"}
+{"id":"lzgg2524om40d","unique":"296592_0","event_name":"started","match_id":296592,"date":"2022-01-15","home_name":"Zaglebie Sosnowiec","away_name":"Resovia Rzeszow","homeid_awayid":"711_1508","score":"0 - 0"}
+{"id":"lzgg2525om41d","unique":"296595_0","event_name":"started","match_id":296595,"date":"2022-01-15","home_name":"Siofok","away_name":"KF Shkendija","homeid_awayid":"1326_1228","score":"0 - 0"}
+{"id":"lzgg2526om40d","unique":"296596_0","event_name":"started","match_id":296596,"date":"2022-01-15","home_name":"Legia Warszawa","away_name":"Botev Plovdiv","homeid_awayid":"899_1220","score":"0 - 0"}
+{"id":"lzgg2527om41d","unique":"296597_0","event_name":"started","match_id":296597,"date":"2022-01-15","home_name":"Karvina","away_name":"MFK Tatran Liptovsky Mikulas","homeid_awayid":"890_2790","score":"0 - 2"}
+{"id":"lzgg2528om40d","unique":"296601_0","event_name":"started","match_id":296601,"date":"2022-01-15","home_name":"FK Radnicki 1923","away_name":"Napredak","homeid_awayid":"4864_720","score":"0 - 0"}
+{"id":"lzgg2965om41d","unique":"296622_0","event_name":"started","match_id":296622,"date":"2022-01-15","home_name":"LASK","away_name":"Grazer AK","homeid_awayid":"653_2490","score":"0 - 0"}
+{"id":"lzgg3286om40d","unique":"296579_0","event_name":"started","match_id":296579,"date":"2022-01-15","home_name":"Gornik Leczna","away_name":"KSZO Ostrowiec","homeid_awayid":"1110_4830","score":"3 - 0"}
+{"id":"lzgg3468om40d","unique":"296623_1493729","event_name":"started","match_id":296623,"date":"2022-01-15","home_name":"Austria Wien","away_name":"SC Team Wiener Linien","homeid_awayid":"156_6231","score":"6 - 3"}
+{"id":"lzgg3508om40d","unique":"296638_0","event_name":"started","match_id":296638,"date":"2022-01-15","home_name":"FC Juniors OO","away_name":"Union Gurten","homeid_awayid":"2026_4833","score":"0 - 0"}
+{"id":"lzgg3509om41d","unique":"296639_0","event_name":"started","match_id":296639,"date":"2022-01-15","home_name":"Kieler SV Holstein 1900 II","away_name":"SV Eichede","homeid_awayid":"1605_5606","score":"0 - 0"}
+{"id":"lzgg3510om40d","unique":"296640_0","event_name":"started","match_id":296640,"date":"2022-01-15","home_name":"Jadran","away_name":"Tabor","homeid_awayid":"6051_4367","score":"0 - 0"}
+{"id":"lzgg3511om41d","unique":"296641_0","event_name":"started","match_id":296641,"date":"2022-01-15","home_name":"Lugano","away_name":"FC Vaduz","homeid_awayid":"167_964","score":"1 - 0"}
+{"id":"lzgg3512om40d","unique":"296642_0","event_name":"started","match_id":296642,"date":"2022-01-15","home_name":"Xamax","away_name":"Thun","homeid_awayid":"663_855","score":"0 - 0"}
+{"id":"lzgg3513om41d","unique":"296643_0","event_name":"started","match_id":296643,"date":"2022-01-15","home_name":"Ried","away_name":"Vorwaerts Steyr","homeid_awayid":"369_2101","score":"0 - 1"}
+{"id":"lzgg3514om40d","unique":"296644_0","event_name":"started","match_id":296644,"date":"2022-01-15","home_name":"Osijek","away_name":"Olimpija Ljubljana","homeid_awayid":"1203_430","score":"2 - 0"}
+{"id":"lzgg3515om41d","unique":"296653_0","event_name":"started","match_id":296653,"date":"2022-01-15","home_name":"Frydek-Mistek","away_name":"FC Fastav Zlin B","homeid_awayid":"390_5970","score":"0 - 0"}
+{"id":"lzgg3516om40d","unique":"296654_0","event_name":"started","match_id":296654,"date":"2022-01-15","home_name":"Paksi SE","away_name":"Sabah","homeid_awayid":"1217_1975","score":"0 - 0"}
+{"id":"lzgg3713om41d","unique":"296659_0","event_name":"started","match_id":296659,"date":"2022-01-15","home_name":"AC Bellinzona","away_name":"Schaffhausen","homeid_awayid":"2112_966","score":"0 - 0"}
+{"id":"lzgg3714om40d","unique":"296660_0","event_name":"started","match_id":296660,"date":"2022-01-15","home_name":"Luzern","away_name":"Winterthur","homeid_awayid":"856_664","score":"0 - 0"}
+{"id":"lzgg3715om41d","unique":"296661_0","event_name":"started","match_id":296661,"date":"2022-01-15","home_name":"Sturm Graz","away_name":"Videoton FC","homeid_awayid":"853_729","score":"0 - 0"}
+{"id":"lzgg3814om40d","unique":"296663_0","event_name":"started","match_id":296663,"date":"2022-01-15","home_name":"Sibenik","away_name":"Fk Zarkovo","homeid_awayid":"3040_4867","score":"0 - 0"}
+{"id":"lzgg4250om40d","unique":"296666_0","event_name":"started","match_id":296666,"date":"2022-01-15","home_name":"Altach","away_name":"St. Gallen","homeid_awayid":"657_661","score":"0 - 2"}
+{"id":"lzgg4251om41d","unique":"296668_0","event_name":"started","match_id":296668,"date":"2022-01-15","home_name":"Ruzomberok","away_name":"Dukla Banska Bystrica","homeid_awayid":"1182_4568","score":"2 - 0"}
+{"id":"lzgg4377om41d","unique":"296569_0","event_name":"started","match_id":296569,"date":"2022-01-15","home_name":"Isloch","away_name":"Dnepr Mogilev","homeid_awayid":"2190_2119","score":"0 - 0"}
+{"id":"lzgg4928om40d","unique":"296808_0","event_name":"started","match_id":296808,"date":"2022-01-15","home_name":"CS Universitatea Craiova","away_name":"Chornomorets Odesa","homeid_awayid":"730_894","score":"0 - 0"}
+{"id":"lzgg5385om41d","unique":"296818_1491809","event_name":"started","match_id":296818,"date":"2022-01-15","home_name":"Nigeria","away_name":"Sudan","homeid_awayid":"1445_1519","score":"0 - 0"}
+{"id":"lzgg5714om40d","unique":"296856_1491810","event_name":"started","match_id":296856,"date":"2022-01-15","home_name":"Guinea-Bissau","away_name":"Egypt","homeid_awayid":"2675_215","score":"0 - 0"}
+{"id":"lzgg6275om41d","unique":"296973_1491821","event_name":"started","match_id":296973,"date":"2022-01-15","home_name":"Gambia","away_name":"Mali","homeid_awayid":"1527_1616","score":"0 - 0"}
+{"id":"lzgg6695om41d","unique":"297062_1491815","event_name":"started","match_id":297062,"date":"2022-01-16","home_name":"Ivory Coast","away_name":"Sierra Leone","homeid_awayid":"1628_1598","score":"0 - 0"}
+{"id":"lzgg6696om40d","unique":"297063_1491822","event_name":"started","match_id":297063,"date":"2022-01-16","home_name":"Tunisia","away_name":"Mauritania","homeid_awayid":"1455_1529","score":"0 - 0"}
+{"id":"lzgg7539om41d","unique":"297093_1491816","event_name":"started","match_id":297093,"date":"2022-01-16","home_name":"Algeria","away_name":"Equatorial Guinea","homeid_awayid":"1528_1518","score":"0 - 0"}
+{"id":"lzgg8183om41d","unique":"297144_1496070","event_name":"started","match_id":297144,"date":"2022-01-17","home_name":"Burkina Faso","away_name":"Ethiopia","homeid_awayid":"1530_1597","score":"0 - 0"}
+{"id":"lzgg8184om40d","unique":"297145_1491798","event_name":"started","match_id":297145,"date":"2022-01-17","home_name":"Cape Verde","away_name":"Cameroon","homeid_awayid":"1608_2711","score":"0 - 0"}
+{"id":"lzgg9127om41d","unique":"297250_1491803","event_name":"started","match_id":297250,"date":"2022-01-18","home_name":"Malawi","away_name":"Senegal","homeid_awayid":"1548_1460","score":"0 - 0"}
+{"id":"lzgg9128om40d","unique":"297251_1491804","event_name":"started","match_id":297251,"date":"2022-01-18","home_name":"Zimbabwe","away_name":"Guinea","homeid_awayid":"2751_2724","score":"0 - 0"}
+{"id":"lzgg9861om41d","unique":"297269_1491805","event_name":"started","match_id":297269,"date":"2022-01-18","home_name":"Gabon","away_name":"Morroco","homeid_awayid":"1546_1435","score":"0 - 0"}
+{"id":"lzgg9862om40d","unique":"297270_1491806","event_name":"started","match_id":297270,"date":"2022-01-18","home_name":"Ghana","away_name":"Comoros","homeid_awayid":"214_2753","score":"0 - 0"}
+{"id":"lzgg10933om41d","unique":"297459_1491812","event_name":"started","match_id":297459,"date":"2022-01-19","home_name":"Egypt","away_name":"Sudan","homeid_awayid":"215_1519","score":"0 - 0"}
+{"id":"lzgg10934om40d","unique":"297460_1491811","event_name":"started","match_id":297460,"date":"2022-01-19","home_name":"Guinea-Bissau","away_name":"Nigeria","homeid_awayid":"2675_1445","score":"0 - 0"}
+{"id":"lzgg11841om41d","unique":"297523_1491817","event_name":"started","match_id":297523,"date":"2022-01-20","home_name":"Ivory Coast","away_name":"Algeria","homeid_awayid":"1628_1528","score":"0 - 0"}
+{"id":"lzgg11842om40d","unique":"297524_1491818","event_name":"started","match_id":297524,"date":"2022-01-20","home_name":"Sierra Leone","away_name":"Equatorial Guinea","homeid_awayid":"1598_1518","score":"0 - 0"}
+{"id":"lzgg12655om41d","unique":"297533_1491823","event_name":"started","match_id":297533,"date":"2022-01-20","home_name":"Gambia","away_name":"Tunisia","homeid_awayid":"1527_1455","score":"0 - 0"}
+{"id":"lzgg12656om40d","unique":"297534_1491824","event_name":"started","match_id":297534,"date":"2022-01-20","home_name":"Mali","away_name":"Mauritania","homeid_awayid":"1616_1529","score":"0 - 0"}
+{"id":"lzgg13750om40d","unique":"298267_1497599","event_name":"started","match_id":298267,"date":"2022-01-23","home_name":"Burkina Faso","away_name":"Gabon","homeid_awayid":"1530_1546","score":"0 - 0"}
+{"id":"lzgg14190om40d","unique":"298317_1497760","event_name":"started","match_id":298317,"date":"2022-01-23","home_name":"Nigeria","away_name":"Tunisia","homeid_awayid":"1445_1455","score":"0 - 0"}
+{"id":"lzgg14741om41d","unique":"298399_1497758","event_name":"started","match_id":298399,"date":"2022-01-24","home_name":"Guinea","away_name":"Gambia","homeid_awayid":"2724_1527","score":"0 - 0"}
+{"id":"lzgg15134om40d","unique":"298413_1497759","event_name":"started","match_id":298413,"date":"2022-01-24","home_name":"Cameroon","away_name":"Comoros","homeid_awayid":"2711_2753","score":"0 - 0"}
+{"id":"lzgg15696om40d","unique":"298473_1497756","event_name":"started","match_id":298473,"date":"2022-01-25","home_name":"Senegal","away_name":"Cape Verde","homeid_awayid":"1460_1608","score":"0 - 0"}
+{"id":"lzgg16090om40d","unique":"298490_1497757","event_name":"started","match_id":298490,"date":"2022-01-25","home_name":"Morroco","away_name":"Malawi","homeid_awayid":"1435_1548","score":"0 - 0"}
+{"id":"lzgg16646om40d","unique":"298620_1497753","event_name":"started","match_id":298620,"date":"2022-01-26","home_name":"Ivory Coast","away_name":"Egypt","homeid_awayid":"1628_215","score":"0 - 0"}
+{"id":"lzgg17060om40d","unique":"298646_1497754","event_name":"started","match_id":298646,"date":"2022-01-26","home_name":"Mali","away_name":"Equatorial Guinea","homeid_awayid":"1616_1518","score":"0 - 0"}
+{"id":"lzgg17650om40d","unique":"299175_1498496","event_name":"started","match_id":299175,"date":"2022-01-29","home_name":"Gambia","away_name":"Cameroon","homeid_awayid":"1527_2711","score":"0 - 0"}
+{"id":"lzgg17991om41d","unique":"299213_1498278","event_name":"started","match_id":299213,"date":"2022-01-29","home_name":"Burkina Faso","away_name":"Tunisia","homeid_awayid":"1530_1455","score":"0 - 0"}
+{"id":"lzgg18544om40d","unique":"299361_1498796","event_name":"started","match_id":299361,"date":"2022-01-30","home_name":"Egypt","away_name":"Morroco","homeid_awayid":"215_1435","score":"0 - 0"}
+{"id":"lzgg19032om40d","unique":"299441_1498795","event_name":"started","match_id":299441,"date":"2022-01-30","home_name":"Senegal","away_name":"Equatorial Guinea","homeid_awayid":"1460_1518","score":"0 - 0"}
+{"id":"lzgg19514om40d","unique":"299783_1501287","event_name":"started","match_id":299783,"date":"2022-02-02","home_name":"Burkina Faso","away_name":"Senegal","homeid_awayid":"1530_1460","score":"0 - 0"}
+{"id":"lzgg19993om41d","unique":"299887_1501286","event_name":"started","match_id":299887,"date":"2022-02-03","home_name":"Cameroon","away_name":"Egypt","homeid_awayid":"2711_215","score":"0 - 0"}
+{"id":"lzgg20481om41d","unique":"300599_1502477","event_name":"started","match_id":300599,"date":"2022-02-05","home_name":"Burkina Faso","away_name":"Cameroon","homeid_awayid":"1530_2711","score":"0 - 0"}
+{"id":"lzgg20968om40d","unique":"301081_1502476","event_name":"started","match_id":301081,"date":"2022-02-06","home_name":"Senegal","away_name":"Egypt","homeid_awayid":"1460_215","score":"0 - 0"}

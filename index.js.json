@@ -1,0 +1,54 @@
+{
+	"pid": 90754,
+	"date": "2022-06-27T10:39:31.414Z",
+	"port": 8000,
+	"ip": "0.0.0.0",
+	"stats": [
+		{
+			"id": null,
+			"version": {
+				"node": "v16.14.2",
+				"total": "4",
+				"app": "1.0.0"
+			},
+			"pid": 90754,
+			"thread": "",
+			"mode": "debug",
+			"overload": 0,
+			"date": "2022-06-28T10:03:09.919Z",
+			"textdb": {
+				"size": 0.525,
+				"pendingwrite": 0,
+				"pendingread": 0,
+				"duration": 0,
+				"documents": 241,
+				"reading": 0,
+				"writing": 0
+			},
+			"memory": 17.64,
+			"rm": 6,
+			"fm": 21,
+			"wm": 0,
+			"em": 0,
+			"mm": 0,
+			"om": 28,
+			"dm": 0,
+			"um": 0.039,
+			"pm": 0,
+			"sm": 0,
+			"cm": 0,
+			"dbrm": 0,
+			"dbwm": 0,
+			"usage": 0,
+			"requests": 3837,
+			"pending": 0,
+			"external": 0,
+			"errors": 0,
+			"timeouts": 0,
+			"online": 0,
+			"uptime": 1303,
+			"download": 0.078,
+			"upload": 4.909
+		}
+	]
+}

@@ -1,0 +1,325 @@
+<div style="background-color: #f0f0f0;" data-type="left" data-scrollbar="visible:true" data-size="20%,20%,20%,0">
+    <div class="m center padding">
+        <h2>Menus</h2>
+        <div data---="textbox__common.search__type:search;placeholder:Rechercher;"></div>
+
+    </div>
+    <div data-bind="common.menus__template">
+        <script type="text/html" >
+           
+
+            
+            {{ foreach m in value }}
+                 <div class="listing">
+                    <div class="caption m" style="padding-left: 16px; font-weight:bold;" >
+                        <label data-id="{{m.name}}" >{{ m.name }} </label>
+                    </div>
+                    <div data---="search__common.search__selector:figure">
+
+                        {{ foreach item in m.items}}
+                        <figure data-search="{{ m.name}} {{item.menu_name}}" class="m">
+                            <section  class="R" href="/contenus/configurations/{{m.name}}/{{ item.menu_name }}/{{item.name}}">
+                                <div>{{ item.menu_name }}</div>
+                            </section>
+                        </figure>
+                        {{ end }}
+                    </div>
+                    </div>
+            {{ end }}
+        </script>
+    </div>
+</div>
+<div style="background-color: #f0f0f0;" data-scrollbar="visible:true" data-type="right" data-size="30%,30%,30%,0" >
+    <div class="m center">
+        <h2>Operations</h2>
+    </div>
+    <div class="row padding">
+    
+        <div data---="properties2__configurations.editor__style:1">
+            <script type="text/plain">
+                [
+                    { group: 'Editeur de configuration', label: 'Base URL', name: 'baseurl', type: 'string' },
+                    { group: 'Editeur de configuration', label: 'Method', name: 'method', type: 'string' },
+                    { group: 'Editeur de configuration', label: 'Cle d\'Access', name: 'access_key', type: 'string',camouflage : true },
+                    { group: 'Editeur de configuration', label: 'Sources', name: 'sources', type: 'string', placeholder: 'Filtrer par sources' },
+                    { group: 'Editeur de configuration', label: 'Catetgories', name: 'categories', type: 'string', placeholder: 'Filtrer par categories' },
+                    { group: 'Editeur de configuration', label: 'Pays', name: 'countries', type: 'string', placeholder: 'Filtrer par pays' },
+                    { group: 'Editeur de configuration', label: 'Langues', name: 'languages', type: 'string', placeholder: 'Filtrer par langue' },
+                    { group: 'Editeur de configuration', label: 'Mots cles', name: 'keywords', type: 'string', placeholder: 'Filtrer par mots cles' },
+                    { group: 'Editeur de configuration', label: 'Date', name: 'date', type: 'date', placeholder: 'Date de creation du contenu' },
+                    { group: 'Editeur de configuration', label: 'Trier', name: 'sort', type: 'string', placeholder: 'Trier par' },
+                    { group: 'Editeur de configuration', label: 'Nombre limite', name: 'limit', type: 'number', placeholder: 'Nombre limit d\'elements a lister' },
+                    { group: 'Editeur de configuration', label: 'Decallage', name: 'offset', type: 'number', placeholder: 'Nombre d\'elements a decaller' }
+                ]
+            </script>
+        </div>
+        <div style="padding:10px" data---="submit__configurations.editor__url:POST /configurations/sauvegarde/;exec:operation_sauver">
+        
+            <div data---="button__null__exec:clickme;icon:fa fa-send" class="hidden custom_btn">Sauvegarder</div>
+
+        </div>
+  
+      
+    </div>
+  
+
+ 
+</div>
+<div data-type="main" data-scrollbar="visible:true">
+    <div style="background-color: #fafa; color:white;"  data---="button__null__exec:mobilemenu;icon:fa fa-bars;" class="menuButton hidden">Contenu</div>
+        <div class="menu hidden" data-bind="common.menus__template">
+            <script type="text/html" >
+                {{ foreach m in value }}
+                <div class="caption m" style="padding-left: 6px; font-weight:bold;" >
+                    <label data-id="{{m.name}}" >{{ m.name }} </label>
+                </div>
+                <div class="listing center">
+                    {{ foreach item in m.items}}
+                        <figure>
+                            <section class="R" href="/contenus/configurations/{{m.name}}/{{ item.menu_name }}/{{item.name}}">
+                                <div>{{ item.menu_name }}</div>
+                                <div class="help nmt"></div>
+                            </section>
+                        </figure>
+                        {{ end }}
+                    </div>
+                {{ end }}
+            </script>
+        </div>
+        <div class="m center padding">
+            <h2><b>Details : </b><b data-bind="common.title2__html"></b><b data-bind="common.title3__html"></b> </h2>
+        </div>
+<div class="col-md-12">
+    <div id="props">
+
+    </div>
+
+  
+</div>
+<script>
+    var archieveform = {};
+	archieveform.date = new Date();
+    function set_local(key,value){
+        localStorage.setItem(key,value);  
+      };
+    
+      function get_local(key){
+        var value = localStorage.getItem(key);
+        if(!value){
+            value = '';
+        };
+        return value;
+      };
+    
+
+    AJAX('GET /menus',function(res){
+        SET('common.title','Configurations');
+        var groups = {};
+            res.forEach(function(menu){
+                if (menu.parent == "none"){
+                    return;
+                }
+
+                var parent = menu.parent;
+                var group_name = menu.parent;
+
+                if(groups[group_name]){
+                    groups[group_name].items.push(menu);
+                }
+                else{
+                    groups[group_name] = {
+                        id : group_name,
+                        name : parent,
+                        items : [menu]
+                    };
+                };
+            });
+            var arr= [];
+                for (var key in groups) {
+                    arr.push({ name: key, items: groups[key].items });
+                    groups[key].items.quicksort('name');
+                };
+        SET('common.menus',arr);
+        set_local('name',arr[0].items[0].menu_name);
+        set_local('parent',arr[0].parent);
+        AJAX('GET /contenus/configurations/'+arr[0].items[0].name,function(response){
+            arr.push(function(next){
+                SET('common.configurations',response);
+                next();
+            });
+
+            
+
+            //tast 2
+            arr.push(function(next){
+                response.forEach(function(item,index,arrr){
+                    var temp = '';
+                 
+                    tl(index,function(html){
+                        temp += html;
+                    });
+                });
+                document.getElementById('props').innerHTML = temp;
+
+                next();
+            });
+
+            arr.async(function(){
+                console.log('Loadded successfully');
+            });
+            
+        });
+    });
+    ROUTE('/contenus/configurations/{parent}/{name}/{apiconfigs_name}',function(){
+        var self = this;
+        var dt = GET('archieveform.date').format('yyyy-MM-dd');
+        set_local('parent',self.params[0]);
+        set_local('name',self.params[1]);
+        set_local('config_name',self.params[2]);
+        AJAX('GET /contenus/configurations/'+self.params[2],function(res){
+            var arr = [];
+            //task 1 
+            arr.push(function(next){
+                SET('common.configurations',res);
+                SET('common.title2',decodeURI(self.params[0])+' ');
+                SET('common.title3','/ '+decodeURI(self.params[1]));
+                next();
+            });
+
+            
+
+            //tast 2
+            arr.push(function(next){
+                res.forEach(function(item,index,arrr){
+                    if(index == 0){
+                    document.getElementById('props').innerHTML = '';
+                        
+                    };
+                    tl(index,function(html){
+                    document.getElementById('props').innerHTML += html;
+                    });
+                });
+
+                next();
+            });
+
+            arr.async(function(){
+                console.log('Loadded successfully');
+            });
+        });
+    });
+   function configurations_operations (el){
+        var name = el.attrd2('id');
+        console.log(name);
+        AJAX('GET /contenus/configurations/'+name,function(res){
+            var configs = {};
+            configs.name = res.name,
+            configs.access_key = res.access_key,
+            configs.method = res.method,
+            configs.baseurl = res.baseurl,
+            configs.sources = '',
+            configs.categories = '',
+            configs.countries	 = '',
+            configs.languages = '',
+            configs.keywords = '',
+            configs.date = '',
+            configs.sort = '',
+            configs.limit = '',
+            configs.offset = '',
+            res.value.split('&').forEach(function(item){
+                var str_tab = item.split('=');
+                console.log(item);
+                    configs[str_tab[0]] = str_tab[1];
+                
+            });
+
+
+            SET('configurations.editor',configs);
+        });
+    };
+    function operation_remove(el,path){
+        var id = el.attrd2('id');
+        console.log(id);
+        SETTER(true, 'confirm', 'show', 'Voulez vous vraiment supprimer ce contenu? Cette operation est irreversible!', ['"check-circle" SUPPRIMER', 'ANNULER'], function() {
+            AJAX('GET /contenus/operations?action=remove&id='+id,function(value,err,response){
+                if(!value.success){
+                    SETTER(true, 'message/warning','Erreur');
+                    return;
+                };
+                SETTER(true,'snackbar/success', 'Suppression terminee avec succes!');
+                NAV.refresh();
+            });
+       });
+    };
+    function operation_sauver(value,err,response){
+        if(!value.success){
+            SETTER(true, 'message/warning','Erreur');
+            return;
+        };
+        SETTER(true,'snackbar/success', 'Modification terminee avec succes!');
+        REDIRECT(`/contenus/configurations/${get_local('parent')}/${get_local('name')}/${get_local('config_name')}`);
+    };
+    function operation_validate(el,path){
+        var id = el.attrd2('id');
+        console.log(id);
+
+        SETTER(true, 'confirm', 'show', 'Voulez vous vraiment envoyer a tous les operateurs?', ['"check-circle" ENVOYER #2BA433', 'ANNULER'], function() {
+            AJAX('GET /contenus/operations?action=validate&id='+id,function(value,err,response){
+                if(!value.success){
+                    SETTER(true,'message/warning', 'Erreur');
+                    return;
+                };
+                SETTER(true,'snackbar/success', 'Contenus envoyes avec succes !');
+                NAV.refresh();
+            });
+        });
+    };
+    function form_exec(res,el){
+        console.log(res);
+        console.log(GET('form.message'));
+    };
+    function selectArchieves(el){
+        var content = common.archieves.findItem('id',$(el).prop('id'));
+        $('.contentbg').rclass('beforecontentbg');
+        $(el).tclass('beforecontentbg');
+        console.log(content);
+        SET('archieves.details',content);
+        //SET('archieves.details.source',content['payload']);
+
+    };
+
+     function tl(index,callback){
+            var html = ' <div data---="detail__common.configurations['+index+']__style:2;small:true;defaultgroup:Configurations No '+(index+ 1)+';">'+
+                '<script type="text/plain">'+
+                   ' ['+
+                  '  { name: \'ID\', path: \'id\', type: \'string\'},'+
+                        '{ name: \'Power\', path: \'power\', type: \'string\'},'+
+                        '{ name: \'Parent\', path: \'parent\', type: \'string\' },'+
+                        '{ name: \'Menu name\', path: \'menu_name\', type: \'string\'},'+
+                        '{ name: \'Method\', path: \'method\', type: \'string\'},'+
+                        '{ name: \'Access Key\', path: \'access_key\', type: \'password\'},'+
+                        '{ name: \'Titre\', path: \'title\', type: \'string\'},'+
+                        '{ name: \'Auteur\', path: \'author\', type: \'string\'},'+
+                        '{ name: \'Base URL\', path: \'baseurl\', type: \'template\', template : \'<a href="{{value}}?access_key={{item.access_key}}&{{item.value}}" target="_blank">{{value}}</a>\',},'+
+                    '] <\/script>'+
+           ' </div>'+
+            '<div data---="detail__common.configurations['+index+']__style:2;small:true;defaultgroup:Parametres Numero '+(index+1)+';">'+
+                '<script type="text/plain">'+
+                    '['+
+                        '{ name: \'\', path: \'value\', type: \'template\', template : \'{{foreach l in value.split("&")}} <b>{{l.split("=")[0]}}</b> : {{l.split("=")[1] }} <br/> {{end}}<span style="cursor:pointer;" class="exec red" data-id="{{item.name}}"  data-exec="configurations_operations">Modifier</span>\', }'+
+                    ']'+
+                '<\/script></div> <br><hr>';
+            callback(html);
+        } ;
+
+
+	$('a[href="#datepicker"]').on('click', function(e) {
+		var opt = {};
+		opt.value = 'archieveform.date';
+		opt.element = this;
+
+		
+
+		SETTER('datepicker', 'show', opt);
+	});
+</script>

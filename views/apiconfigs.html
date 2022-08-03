@@ -1,0 +1,164 @@
+@{title(CONF.name)}
+@{layout('')}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<meta name="robots" content="all,follow" />
+	@{if CONF.openplatform}
+	<script src="@{if CONF.cdn}@{'%cdn'}@{else}https://cdn.componentator.com@{fi}/openplatform.min@4.js"></script>
+	@{fi}
+	<script src="//cdn.componentator.com/spa.min@18.js"></script>
+	<link href="//cdn.componentator.com/spa.min@18.css" rel="stylesheet" />
+	@{import('meta', 'head', 'default.css','favicon.png')}
+</head>
+<body data---="exec"@{if query.darkmode === '1'} class="ui-dark"@{fi}>
+    <style>
+        .active{
+            background: #4285F4!important;
+            color: white!important;
+        }
+
+    </style>
+	<div data---="LAZY menu__null__style:2"></div>
+	<div data---="LAZY approve__null__cancel:@(Cancel)"></div>
+	<div data---="LAZY message__null__style:2"></div>
+	<div data---="LAZY notifybar"></div>
+	<div data---="LAZY fileuploader"></div>
+	<div data---="LAZY clipboard"></div>
+	<div data---="LAZY faicons"></div>
+	<div data---="LAZY datepicker"></div>
+	<div data---="LAZY directory__null__placeholder:@(Search)"></div>
+	<div data---="LAZY colorpicker"></div>
+	<div data---="paste"></div>
+	<div data---="shortcuts"></div>
+        
+                <div data---="layout2__null__parent:window" class="invisible">
+                    <div data-type="top" data-size="60">
+                        <div class="toolbar toolbar-bg">
+                            <div class="pull-right">
+                                <a href="/evenements">
+                                    <div data---="button__null__exec:clickme;icon:fa fa-sync" class="hidden">Rafraichir</div>
+                                </a>
+                            </div>
+                            <div>
+                                <button class="exec" id="stop"  data-exec="stop"><i class="fa red fa-minus-circle"></i>STOP</button>
+                                <button class="exec" id="resume" disabled data-exec="resume"><i class="fa fa-plus-circle"></i>Démarer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-type="left" data-scrollbar="visible:true" data-size="20%,20%,20%,0">
+                        <div class="m center">
+                            <h4>Matchs aujourd'hui</h4>
+                        </div>
+                        <div data-bind="common.matchs__template">
+                            <script type="text/html" >
+                                {{ foreach m in value }}
+                                <a class="R" href="/events/{{m.homeid_awayid}}">
+                                    <div data-id="{{m.match_id}}" data---="button__null__exec:clickme;icon:fa fa-volleyball-ball" class="btn hidden">{{ m.home_name }} VS {{ m.away_name }} -- {{ m.time }}</div>
+                                </a>
+                                {{ end }}
+                            </script>
+                        </div>
+                    </div>
+                    <div data-type="right" data-size="20%,20%,20%,0" >
+                        <div class="m center">
+                            <h4>Envoie manuel</h4>
+                            <div data---="input___form.message__type:multiline;placeholder:Saisir un message" class="m"></div>
+                            <div data---="submit__form__url:POST /message/envoie/;exec:form_exec">
+                                <button name="submit" disabled="disabled">SUBMIT FORM</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div data-type="main" data-scrollbar="visible:true">
+                        <div style="background-color: #fafa; color:white;"  data---="button__null__exec:mobilemenu;icon:fa fa-bars;" class="menuButton hidden">Menu</div>
+                                <div class="menu hidden" data-bind="common.matchs__template">
+                                    <script type="text/html" >
+                                        {{ foreach m in value }}
+                                        <a class="R" href="/events/{{m.homeid_awayid}}">
+                                            <div  data-id="{{m.match_id}}" data---="button__null__exec:clickme;icon:fa fa-volleyball-ball;" class="btn hidden">{{ m.home_name }} VS {{ m.away_name }} -- {{ m.time }} </div>
+                                        </a>
+                                        {{ end }}
+                                    </script>
+                                </div>
+
+                        <div class="m center">
+                            <h4>Evenements</h4>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="m center" data-bind="common.events__template">
+                                <script type="text/html" >
+                                    {{ foreach event in value }}
+                                    <div class="row">
+                                            <div style="width: 400px;padding:10px;background:white;border:1px solid #E0E0E0">
+                                                {{ event.template }}
+                                            </div>
+                                    </div>
+                                    {{ end }}
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+	<script>
+        NAV.clientside('.R');
+		var common = {};
+        var form = {};
+		common.secret = 'flowstream';
+        common.matchs = [];
+        common.events = [];
+        AJAX('GET /matchs',function(res){
+            SET('common.matchs',res);
+            AJAX('GET /events/'+res[0].match_id,function(response){
+                response.quicksort('dtcreated_desc');
+                SET('common.events',response);
+            });
+        });
+        function stop(){
+            $('#stop').prop('disabled',true);
+            $('#resume').prop('disabled',false);
+            console.log('stop');
+        };
+        function resume(){
+            $('#stop').prop('disabled',false);
+            $('#resume').prop('disabled',true);
+            console.log('resume');
+        };
+        function clickme(el,path){
+
+            $('.active').removeClass('active');
+            $(el).addClass('active');
+        };
+        function mobilemenu(){
+            if(isMOBILE){
+                $('.menu').toggleClass('hidden');
+            }
+        };
+        if(isMOBILE){
+            $('.menuButton').removeClass('hidden');
+        }else{
+            $('.menuButton').css('display','none');
+        };
+        ROUTE('/events/{match_id}',function(){
+            var self = this;
+            AJAX('GET '+self.href,function(res){
+                res.quicksort('dtcreated_desc');
+                SET('common.events',res);
+            });
+        });
+        function form_exec(res,el){
+            console.log(res);
+            console.log(GET('form.message'));
+        };
+
+
+	</script>
+</body>
+</html>

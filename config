@@ -1,0 +1,18 @@
+name                    : FlowStream
+allow_custom_titles     : true
+cdn                     : /designer/
+flowstream_designer     : flowstreamdesigner.totaljs.com
+backup                  : false
+flowstream_worker       : true
+dark                    : true
+cookie          (generate)  : 6
+cookie_secret   (generate)  : 10
+// auth                    : ['username:password', 'petersirka:123456'];
+// Disables: Worker/Fork
+// flowstream_worker       : false
+
+// Replaces WorkerThread for the ChildProcess/Fork
+// flowstream_worker       : fork
+
+// Own list of components and the structure must be the same as https://cdn.totaljs.com/flowstream/components/db.json
+// flowstream_components   : https://website.com/components.json

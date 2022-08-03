@@ -1,0 +1,35 @@
+{ "id" : 1, "long" : "-3.2508", "lat" : "10.2992", "name" : "Gaoua", "country" : "bf"}
+{ "id" : 2, "long" : "-0.0345", "lat" : "14.0354", "name" :"Dori", "country" : "bf"}
+{ "id" : 3, "long" : "0.3578", "lat" : "12.0622", "name" :"Fada N'gourma", "country" : "bf"}
+{ "id" : 4, "long" : "-1.0731", "lat" : "11.6636", "name" :"Manga", "country" : "bf"}
+{ "id" : 5, "long" : "-1.2983", "lat" : "12.5822", "name" :"Ziniaré", "country" : "bf"}
+{ "id" : 6, "long" : "-1.0844", "lat" : "13.0917", "name" :"Kaya", "country" : "bf"}
+{ "id" : 7, "long" : "-0.3697", "lat" : "11.78", "name" :"Tenkodogo", "country" : "bf"}
+{ "id" : 8, "long" : "-3.4667", "lat" : "12.4667", "name" :"Dédougou", "country" : "bf"}
+{ "id" : 9, "long" : "-2.3667", "lat" : "12.25", "name" :"Koudougou", "country" : "bf"}
+{ "id" : 10, "long" : "-4.7667", "lat" : "10.6333", "name" :"Banfora", "country" : "bf"}
+{ "id" : 11, "long" : "-2.4216", "lat" : "13.5828", "name" :"Ouahigouya", "country" : "bf"}
+{ "id" : 12, "long" : "-4.2979", "lat" : "11.1771", "name" :"Bobo Dioulasso", "country" : "bf"}
+{ "id" : 13, "long" : "-1.145", "lat" : "11.1697", "name" :"Pô", "country" : "bf"}
+{ "id" : 14, "long" : "-1.5383", "lat" : "12.3642", "name" :"Ouagadougou", "country" : "bf"}
+{ "id" : 15, "long" : "2.9167", "lat" : "11.3333", "name" :"Alibori", "country" : "bj"}
+{ "id" : 16, "long" : "1.6667", "lat" : "10.75", "name" :"Atacora", "country" : "bj"}
+{ "id" : 17, "long" : "2.226228589076638", "lat" : "6.879246471317226", "name" :"Atlantique", "country" : "bj"}
+{ "id" : 18, "long" : "2.78126924699049", "lat" : "9.623371486453811", "name" :"Borgou", "country" : "bj"}
+{ "id" : 19, "long" : "2.306007003525836", "lat" : "8.40025797920313", "name" :"Collines", "country" : "bj"}
+{ "id" : 20, "long" : "1.7523442319677844", "lat" : "7.137063186434119", "name" :"Couffo", "country" : "bj"}
+{ "id" : 21, "long" : "1.6709875051449383", "lat" : "9.794991956526138", "name" :"Donga", "country" : "bj"}
+{ "id" : 22, "long" : "2.4404833699934767", "lat" : "6.392365164304208", "name" :"Littoral", "country" : "bj"}
+{ "id" : 23, "long" : "8.5534", "lat" : "8.5534", "name" :"Momo", "country" : "bj"}
+{ "id" : 24, "long" : "2.494367683325067", "lat" : "6.658110378957391", "name" :"Oueme", "country" : "bj"}
+{ "id" : 25, "long" : "2.53273655404521", "lat" : "7.388777662547984", "name" :"Plateau", "country" : "bj"}
+{ "id" : 26, "long" : "2.065646444742701", "lat" : "7.402704978647696", "name" :"Zou", "country" : "bj"}
+{ "id" : 26, "long" : "21.122189096350144", "lat" : "-3.713890563079864", "name" :"Tombouctou", "country" : "ml"}
+{ "id" : 26, "long" : "16.266405002556823", "lat" : "-3.713890563079864", "name" :"Gao", "country" : "ml"}
+{ "id" : 26, "long" : "18.96098214506163", "lat" : "1.7963171895855485", "name" :"Kidal", "country" : "ml"}
+{ "id" : 26, "long" : "12.866665084287442", "lat" : "-7.5598513303800985", "name" :"Koulikoro", "country" : "ml"}
+{ "id" : 26, "long" : "13.43367715012357", "lat" : "-6.24851986258631", "name" :"segou", "country" : "ml"}
+{ "id" : 26, "long" : "14.438010018042842", "lat" : "-11.445288903477882", "name" :"Kayes", "country" : "ml"}
+{ "id" : 26, "long" : "14.488246972909911", "lat" : "-4.197307116876436", "name" :"Mopti", "country" : "ml"}
+{ "id" : 26, "long" : "11.324080724688084", "lat" : "-5.698801613400691", "name" :"Sikasso", "country" : "ml"}
+{ "id" : 26, "long" : "12.641366334751787", "lat" : "-8.00033325578285", "name" :"Bamako", "country" : "ml"}
