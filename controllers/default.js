@@ -6,7 +6,7 @@ exports.install = function() {
 };
 function index(){
 	var self = this;
-	self.view('contenus',{
+	self.view('events',{
 		menus : []
 	});
 }
