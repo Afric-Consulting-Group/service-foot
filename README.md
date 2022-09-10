@@ -42,6 +42,10 @@ __Sitemap (Routes)__
 # Documentation
 
 ## Introduction globale
-Afric Consulting Group est une entreprise specialisee dans la conception, la creation et la maintenance des services a valeurs ajoutees SVA (SVI, KIOSQUE MOBILE, CENTRE D'APPEL, USSD, SMS etc) pour les operateurs de telephonie mobile.Cette application intervient specifique dans le cadre des service KIOSQUE MOBILE. L'entreprise dispose d'une equipe de mise a jours des contenus de kiosque et cette application servira a automatiser les differentes taches repetives des agents de mise a jour.
+Afric Consulting Group est une entreprise specialisee dans la conception, la creation et la maintenance des services a valeurs ajoutees SVA (SVI, KIOSQUE MOBILE, CENTRE D'APPEL, USSD, SMS etc) pour les operateurs de telephonie mobile.Cette application intervient specifique dans le cadre des service Foot.
 
 ## L'objectif de l'application.
+
+  Le but principal de cette application est de receuillir  des informations de foot (CAN, Coupedu monde ....) grace a l'api [Live Score](https://live-score-api.com)
+  
+  <a href="https://ibb.co/0r2N2mz"><img src="https://i.ibb.co/M7STSZJ/image.png" alt="image" border="0"></a>
