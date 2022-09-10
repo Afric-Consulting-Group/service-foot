@@ -61,9 +61,9 @@ Afric Consulting Group est une entreprise specialisee dans la conception, la cre
   <a href="https://ibb.co/thQjKGY"><img src="https://i.ibb.co/26WVh9c/image.png" alt="image" border="0"></a>
   
   
-## Exemple d'automatisation par API
+## Fonctionnement
 
- - Service Foot
+  Service Foot
  
  Dans le cas du service foot nous avons utilise comme API [Live Score](https://live-score-api.com) qui nous permette de receuillir les informations de differnts matchs (CAN, Coue du monde...) ainsi que les evenements de chaque match (Faute, Carton ....) facilements.
  
