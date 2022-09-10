@@ -29,20 +29,15 @@ __Sitemap (Routes)__
 
 `/`                      ----> `Espace de validation`
 
-<a href="https://ibb.co/JqX2Q9d"><img src="https://i.ibb.co/VxXDmsN/image.png" alt="image" border="0"></a>
+<a href="https://ibb.co/ctqhtKh"><img src="https://i.ibb.co/K7nx7cx/image.png" alt="image" border="0"></a>
 
 
 `/flow`                 ----> `Espace technique de maintenance et de programmation visuelle`
 
-<a href="https://ibb.co/F7YpWX9"><img src="https://i.ibb.co/f0NJS9b/image.png" alt="image" border="0"></a>
+<a href="https://ibb.co/thQjKGY"><img src="https://i.ibb.co/26WVh9c/image.png" alt="image" border="0"></a>
 
+<a href="https://ibb.co/9Hs4qwH"><img src="https://i.ibb.co/RTz6ChT/image.png" alt="image" border="0"></a>
 
-__Docker__:
-
-```bash
-docker pull totalplatform/flow
-docker run -p 8000:8000 totalplatform/flow
-````
 
 # Documentation
 
