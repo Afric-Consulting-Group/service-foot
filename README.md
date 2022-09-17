@@ -65,8 +65,11 @@ Afric Consulting Group est une entreprise specialisee dans la conception, la cre
 
   Service Foot
  
- Dans le cas du service foot nous avons utilise comme API [Live Score](https://live-score-api.com) qui nous permette de receuillir les informations de differnts matchs (CAN, Coue du monde...) ainsi que les evenements de chaque match (Faute, Carton ....) facilements.
- 
+ Dans le cas du service foot nous avons utilise comme API [Live Score](https://live-score-api.com) qui nous permet de receuillir les informations de differnts matchs (CAN, Coupe du monde...) ainsi que les evenements de chaque match (Faute, Carton ....) facilements.
+    __Bon a savoir__
+      L'api livescore api donnee une cle api permetant d'avoir acces au donnee de beaucoup de competitions. Cependant le nombre de requetes par minutes est limite en fonction de l'offre de forfait que vous aurez pris. L'offre habituelle que nous utilisons, l'offre STANDARD offre 600 req/min au max. Generalement quand c'est un match de foot cette limite n'est pas atteint. Par contre il arrive que deux matchs ou trois se passent en meme temps. 
+      L'application continue de supporter parallellement ces matchs mais le nombre de requette par minute est multiplie par 2 ou 3 et donc la limite est atteint et il faut attendre 1 heure avant de pouvoir effectuer de nouvelles requetes.
+      
   <a href="https://ibb.co/0r2N2mz"><img src="https://i.ibb.co/M7STSZJ/image.png" alt="image" border="0"></a>
   
  Exemple de flow du ServiceFoot Events
